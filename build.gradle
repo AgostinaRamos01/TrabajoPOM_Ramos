@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'   // Para archivos .xlsx
+    implementation 'org.apache.poi:poi-ooxml-schemas:5.2.3'
+    implementation 'org.apache.commons:commons-collections4:4.4'  // A veces necesario para POI
+    implementation 'io.github.bonigarcia:webdrivermanager:5.3.0'  // Asegúrate de usar la versión más reciente
+
+}
+
+test {
+    useJUnitPlatform()
+}
